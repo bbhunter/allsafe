@@ -1,11 +1,7 @@
 
- <img align="left" width="132" height="132" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png">
+# Allsafe - Android
 
-# Allsafe
-
-[![forthebadge](https://forthebadge.com/images/badges/built-for-android.svg)](https://github.com/t0thkr1s/)
-
-Allsafe is an intentionally vulnerable application that contains various vulnerabilities. Unlike other vulnerable Android apps, this one is less like a CTF and more like a real-life application that uses modern libraries and technologies. Additionally, I have included some Frida based challenges for you to explore. Have fun and happy hacking!
+Allsafe - Android is an intentionally vulnerable application that contains various vulnerabilities. Unlike other vulnerable Android apps, this one is less like a CTF and more like a real-life application that uses modern libraries and technologies. Additionally, I have included some Frida based challenges for you to explore. Have fun and happy hacking!
 
 #### Useful Frida Scripts
  
