@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="12dp"
+        android:layout_gravity="center_vertical"
+        android:tint="@color/secondaryColor" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/menu_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/menu_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/difficulty_badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="Easy"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="2dp"
+        android:background="@drawable/difficulty_badge_easy"
+        android:textColor="@color/difficultyEasy" />
+
+</LinearLayout>

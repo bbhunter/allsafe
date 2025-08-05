@@ -4,203 +4,227 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/chips"
+        <!-- Challenge Header Box -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            android:background="@drawable/terminal_border"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_serialization"
+                android:tint="@color/secondaryColor" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Object Serialization"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Exploit insecure deserialization"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="[HARD]"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/difficulty_badge_hard"
+                android:textColor="@color/difficultyHard" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="[CHALLENGE 19]"
+            android:textColor="@color/secondaryColor"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:alignContent="center"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:text="EXPLOIT SERIALIZATION"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:gravity="center" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="OWASP"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/secondaryColor" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Object"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Serialization"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Insecure"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Data"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Storage"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <TextView
-            android:id="@+id/difficulty"
-            android:layout_width="0dp"
+        <!-- Mission Briefing -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Difficulty: Medium"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chips" />
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:justificationMode="inter_word"
-            android:text="It is often convenient to serialize objects for convenient communication or to save them for later use. I heard that there's an object deserialization vulnerability somewhere combined with insecure data storage. Good luck exploiting it!"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/difficulty"
-            tools:targetApi="o" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MISSION BRIEFING"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="16dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usernameLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:boxStrokeColor="@color/secondaryLightColor"
-            app:hintTextColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:hint="Username"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:textColorHighlight="@color/secondaryLightColor"
-                android:textColorHint="@color/secondaryLightColor"
-                android:textSize="18sp" />
+                android:layout_height="wrap_content"
+                android:text="This challenge demonstrates insecure object serialization vulnerabilities. The application serializes and deserializes objects without proper validation. Your task is to create a malicious serialized object that will execute arbitrary code when deserialized."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="USER SERIALIZATION"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:boxStrokeColor="@color/secondaryLightColor"
-            app:hintTextColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/usernameLayout">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:hint="Password"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:textColorHighlight="@color/secondaryLightColor"
-                android:textColorHint="@color/secondaryLightColor"
-                android:textSize="18sp" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:boxStrokeColor="@color/secondaryLightColor"
+                app:hintTextColor="@color/secondaryLightColor">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColorHighlight="@color/secondaryLightColor"
+                    android:textColorHint="@color/secondaryLightColor"
+                    android:textColor="@color/white"
+                    android:fontFamily="monospace"
+                    android:textSize="14sp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/save"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Save User Data"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLayout"
-            app:strokeColor="@color/secondaryLightColor">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        </com.google.android.material.button.MaterialButton>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/secondaryLightColor"
+                app:hintTextColor="@color/secondaryLightColor">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/load"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Load User Data"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/save"
-            app:strokeColor="@color/secondaryLightColor">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:textColorHighlight="@color/secondaryLightColor"
+                    android:textColorHint="@color/secondaryLightColor"
+                    android:textColor="@color/white"
+                    android:fontFamily="monospace"
+                    android:textSize="14sp" />
 
-        </com.google.android.material.button.MaterialButton>
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="[SAVE]"
+                    android:textColor="@color/black"
+                    android:background="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/load"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="[LOAD]"
+                    android:textColor="@color/black"
+                    android:background="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </ScrollView>

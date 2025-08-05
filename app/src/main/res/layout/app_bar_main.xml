@@ -15,8 +15,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/darkerColor"
-            app:popupTheme="@style/Theme.Allsafe.PopupOverlay" />
+            android:background="@color/black"
+            app:popupTheme="@style/Theme.Allsafe.PopupOverlay"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_menu" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

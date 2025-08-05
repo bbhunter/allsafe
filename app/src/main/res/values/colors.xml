@@ -9,4 +9,9 @@
     <color name="secondaryColor">#00c853</color>
     <color name="secondaryLightColor">#5efc82</color>
     <color name="secondaryDarkColor">#009624</color>
+    <color name="difficultyEasy">#00c853</color>
+    <color name="difficultyMedium">#ffeb3b</color>
+    <color name="difficultyHard">#f44336</color>
+    <color name="drawerTextPrimary">#ffffff</color>
+    <color name="drawerTextSecondary">#888888</color>
 </resources>

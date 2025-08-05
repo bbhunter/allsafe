@@ -4,163 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/chips"
+        <!-- Challenge Header Box -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:alignContent="center"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="OWASP"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Frida"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Instrumentation"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Password"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Native"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Library"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Bypass"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <TextView
-            android:id="@+id/difficulty"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Difficulty: Hard"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chips" />
-
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:justificationMode="inter_word"
-            android:text="There's a native library compiled with the application that is used to validate the password below. By reverse engineering the library, you'll easily find the password. However, your task here is to use Frida to hook the method in the library and bypass the password check."
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/difficulty"
-            tools:targetApi="o" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:boxStrokeColor="@color/secondaryLightColor"
-            app:hintTextColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:hint="Enter Password here..."
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:textColorHighlight="@color/secondaryLightColor"
-                android:textColorHint="@color/secondaryLightColor"
-                android:textSize="18sp" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_native_library"
+                    android:tint="@color/secondaryColor" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/check"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Native Library"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[HARD]"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/difficulty_badge_hard"
+                    android:textColor="@color/difficultyHard" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Hook native library methods with Frida"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:fontFamily="monospace" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Check"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passLayout"
-            app:strokeColor="@color/secondaryLightColor">
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="[CHALLENGE 13]"
+            android:textColor="@color/secondaryColor"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2" />
 
-        </com.google.android.material.button.MaterialButton>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="HOOK THE NATIVE"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:gravity="center" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/secondaryColor" />
+
+        <!-- Mission Briefing -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MISSION BRIEFING"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="There's a native library compiled with the application that is used to validate the password below. By reverse engineering the library, you'll easily find the password. However, your task here is to use Frida to hook the method in the library and bypass the password check."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/secondaryColor"
+                app:hintTextColor="@color/secondaryColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="Enter Password here..."
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/secondaryColor"
+                    android:textColorHint="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:text="[CHECK]"
+                android:textColor="@color/black"
+                android:background="@color/secondaryColor"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:paddingHorizontal="24dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </ScrollView>

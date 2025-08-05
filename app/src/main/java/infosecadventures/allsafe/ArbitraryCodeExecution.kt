@@ -29,7 +29,7 @@ class ArbitraryCodeExecution : Application() {
                             .loadClass("infosecadventures.allsafe.plugin.Loader")
                             .getMethod("loadPlugin")
                             .invoke(null)
-                } catch (ignored: Exception) {
+                } catch (_: Exception) {
                 }
             }
         }
@@ -37,7 +37,7 @@ class ArbitraryCodeExecution : Application() {
 
     private fun invokeUpdate() {
         try {
-            val file = File(Environment.DIRECTORY_DOWNLOADS + "/allsafe_updater.apk")
+            val file = File("/sdcard/" + Environment.DIRECTORY_DOWNLOADS + "/allsafe_updater.apk")
             if (file.exists() && file.isFile) {
                 val dexClassLoader = DexClassLoader(file.absolutePath, cacheDir.absolutePath, null, classLoader)
                 val version = dexClassLoader.loadClass("infosecadventures.allsafe.updater.VersionCheck")
@@ -47,7 +47,7 @@ class ArbitraryCodeExecution : Application() {
                     Toast.makeText(this, "Update required!", Toast.LENGTH_LONG).show()
                 }
             }
-        } catch (ignored: Exception) {
+        } catch (_: Exception) {
         }
     }
 }

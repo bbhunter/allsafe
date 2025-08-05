@@ -4,193 +4,203 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/chips"
+        <!-- Challenge Header Box -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:orientation="horizontal"
+            android:background="@drawable/terminal_border"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_encryption_key"
+                android:tint="@color/secondaryColor" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weak Cryptography"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Exploit weak encryption algorithms"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="[HARD]"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/difficulty_badge_hard"
+                android:textColor="@color/difficultyHard" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="[CHALLENGE 15]"
+            android:textColor="@color/secondaryColor"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:alignContent="center"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:text="BREAK THE CRYPTO"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:gravity="center" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="OWASP"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/secondaryColor" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Frida"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Instrumentation"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Weak"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Encryption"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Key"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <TextView
-            android:id="@+id/difficulty"
-            android:layout_width="0dp"
+        <!-- Mission Briefing -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Difficulty: Hard"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chips" />
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:justificationMode="inter_word"
-            android:text="Enter your deepest, darkest secret here and we'll encrypt it for you. By reverse engineering the code you'll find what you are looking for, but that's too easy and way too convenient. Let's use Frida and hook some methods that are used during encryption."
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/difficulty"
-            tools:targetApi="o" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MISSION BRIEFING"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="16dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/secretLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:boxStrokeColor="@color/secondaryLightColor"
-            app:hintTextColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/secret"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your deepest, darkest secret here and we'll encrypt it for you. By reverse engineering the code you'll find what you are looking for, but that's too easy and way too convenient. Let's use Frida and hook some methods that are used during encryption."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/secretLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxStrokeColor="@color/secondaryColor"
+                app:hintTextColor="@color/secondaryColor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/secret"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:hint="Enter your secret here..."
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/secondaryColor"
+                    android:textColorHint="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:gravity="center"
-                android:hint="Enter your secret here..."
-                android:imeOptions="actionDone"
-                android:textColorHighlight="@color/secondaryLightColor"
-                android:textColorHint="@color/secondaryLightColor"
-                android:textSize="18sp" />
+                android:layout_marginBottom="8dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/encrypt"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="[ENCRYPT]"
+                    android:textColor="@color/black"
+                    android:background="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="12sp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/encrypt"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Encrypt"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/secretLayout"
-            app:strokeColor="@color/secondaryLightColor">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/hash"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="[HASH]"
+                    android:textColor="@color/black"
+                    android:background="@color/secondaryColor"
+                    android:fontFamily="monospace"
+                    android:textSize="12sp" />
 
-        </com.google.android.material.button.MaterialButton>
+            </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/hash"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Hash"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/encrypt"
-            app:strokeColor="@color/secondaryLightColor">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/random"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:text="[RANDOM]"
+                android:textColor="@color/black"
+                android:background="@color/secondaryColor"
+                android:fontFamily="monospace"
+                android:textSize="14sp"
+                android:paddingHorizontal="24dp" />
 
-        </com.google.android.material.button.MaterialButton>
+        </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/random"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Random"
-            android:textColor="@color/secondaryLightColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hash"
-            app:strokeColor="@color/secondaryLightColor">
-
-        </com.google.android.material.button.MaterialButton>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </ScrollView>

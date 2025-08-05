@@ -15,12 +15,21 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:background="@color/primaryColor"
+        android:background="@drawable/drawer_border"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/drawer" />
+        app:menu="@menu/drawer"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:itemIconTint="@color/nav_item_icon_color"
+        app:itemBackground="@drawable/drawer_menu_item_background"
+        app:itemShapeFillColor="@color/secondaryColor"
+        app:itemShapeInsetStart="0dp"
+        app:itemShapeInsetTop="0dp"
+        app:itemShapeInsetEnd="0dp"
+        app:itemShapeInsetBottom="0dp"
+        style="@style/NavigationViewStyle" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

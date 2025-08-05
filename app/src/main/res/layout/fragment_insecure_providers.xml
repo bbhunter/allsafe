@@ -4,107 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/chips"
+        <!-- Challenge Header Box -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_provider"
+                    android:tint="@color/secondaryColor" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Insecure Providers"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[HARD]"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/difficulty_badge_hard"
+                    android:textColor="@color/difficultyHard" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Exploit insecure content providers"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                android:fontFamily="monospace" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:text="[CHALLENGE 17]"
+            android:textColor="@color/secondaryColor"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:alignContent="center"
-            app:alignItems="center"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:text="EXPLOIT PROVIDER"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:gravity="center" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="OWASP"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@color/secondaryColor" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="IPC"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Insecure"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="ContentProvider"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="FileProvider"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="Drozer"
-                android:textColor="@color/primaryColor"
-                app:chipBackgroundColor="@color/secondaryLightColor" />
-
-        </com.google.android.flexbox.FlexboxLayout>
-
-        <TextView
-            android:id="@+id/difficulty"
-            android:layout_width="0dp"
+        <!-- Mission Briefing -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="Difficulty: Hard"
-            android:textSize="18sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/chips" />
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:background="@drawable/terminal_border"
+            android:padding="20dp">
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:justificationMode="inter_word"
-            android:text="We got a report that our notes database leaked through an insecure content provider. Fortunately, the dev team said it's easy to secure Android inter process communication. The app also provides access to some files which we share with other apps... \n\nCan you check if the implementation is good enough? Allsafe can't afford another sensitive file leak."
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/difficulty"
-            tools:targetApi="o" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MISSION BRIEFING"
+                android:textColor="@color/secondaryColor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="16dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We got a report that our notes database leaked through an insecure content provider. Fortunately, the dev team said it's easy to secure Android inter process communication. The app also provides access to some files which we share with other apps...\n\nCan you check if the implementation is good enough? Allsafe can't afford another sensitive file leak."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </ScrollView>
