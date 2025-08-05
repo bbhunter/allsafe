@@ -62,10 +62,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        when {
-            mAppBarConfiguration?.openableLayout?.isOpen!! -> mAppBarConfiguration!!.openableLayout?.close()
-            supportFragmentManager.backStackEntryCount > 1 -> supportFragmentManager.popBackStack()
-            else -> SnackUtil.confirmExit(this)
+        val drawerLayout = mAppBarConfiguration?.openableLayout
+        if (drawerLayout?.isOpen == true) {
+            drawerLayout.close()
+        } else if (supportFragmentManager.backStackEntryCount > 1) {
+            supportFragmentManager.popBackStack()
+        } else {
+            super.onBackPressed()
         }
     }
 }
