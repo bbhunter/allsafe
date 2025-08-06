@@ -48,7 +48,7 @@ android {
         pickFirst 'AndroidManifest.xml'
     }
 
-    ndkVersion = '29.0.13113456'
+    ndkVersion = '26.1.10909125'
 }
 
 dependencies {
