@@ -28,7 +28,7 @@
 
 ### 🎯 Key Features
 
-- **20+ Security Challenges** covering various vulnerability categories
+- **15+ Security Challenges** covering various vulnerability categories
 - **Modern Tech Stack** using current Android development practices
 - **Frida Challenges** for dynamic instrumentation practice
 - **Real-world Scenarios** that mirror actual application vulnerabilities
@@ -79,7 +79,7 @@ adb install app/build/outputs/apk/debug/app-debug.apk
 
 The application contains various security challenges organized by difficulty:
 
-### 🟢 Easy Challenges
+### Challenges
 
 ### 1. Insecure Logging
 
@@ -93,11 +93,11 @@ Simple information disclosure vulnerability. Use the `logcat` command-line tool 
 <details>
 <summary>Show me how it's done!</summary>
 <br>
-adb shell 'pidof infosecadventures.allsafe'
+<code>adb shell 'pidof infosecadventures.allsafe'</code>
 <br><br>
 Take output and substitue for <pid>
 <br><br>
-adb shell 'logcat --pid <pid> | grep secret'
+<code>adb shell 'logcat --pid [PID] | grep secret'</code>
 <br><br>
 </details>
 
@@ -112,13 +112,6 @@ Some credentials are left in the code. Your task is to reverse engineer the app 
 - [Zomato Hardcoded Credentials](https://hackerone.com/reports/246995)
 - [8x8 Hardcoded Credentials](https://hackerone.com/reports/412772)
 - [Reverb Hardcoded API Secret](https://hackerone.com/reports/351555)
-
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
 
 ---
 
@@ -143,13 +136,6 @@ Loading modules securely with third-party apps are not easy. Write a PoC applica
 
 - [Arbitrary Code Execution via Third-Party Package Contexts](https://blog.oversecured.com/Android-arbitrary-code-execution-via-third-party-package-contexts/)
 
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
-
 ---
 
 ### 5. Secure Flag Bypass
@@ -159,13 +145,6 @@ Another Frida-based task. No real vulnerability here, just have fun bypassing th
 ###### Resources & HackerOne Reports:
 
 - [Android FLAG_SECURE Reference](https://developer.android.com/reference/android/view/WindowManager.LayoutParams#FLAG_SECURE)
-
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
 
 ---
 
@@ -177,13 +156,6 @@ Certificate pinning is implemented using the OkHttp library. You have to bypass 
 
 - [Certificate and Public Key Pinning](https://owasp.org/www-community/controls/Certificate_and_Public_Key_Pinning)
 - [Coinbase Vulnerabilities](https://hackerone.com/reports/5786)
-
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
 
 ---
 
@@ -197,13 +169,6 @@ There's a vulnerable broadcast recevier in the application. Trigger it with the 
 - [ok.ru Broadcast Receiver Exploitation](https://hackerone.com/reports/97295)
 - [Bitwarden Vulnerable Broadcast Receiver](https://hackerone.com/reports/289000)
 
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
-
 ---
 
 ### 8. Deep Link Exploitation
@@ -216,13 +181,6 @@ Similar to the insecure broadcast receiver, you need to provide the right query 
 - [Grab Insecure Deep Link](https://hackerone.com/reports/401793)
 - [Periscope Deep Link CSRF](https://hackerone.com/reports/583987)
 
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
-
 ---
 
 ### 9. SQL Injection
@@ -232,13 +190,6 @@ Just a regular SQL injection that you'd find in web applications. No need to rev
 ###### Resources & HackerOne Reports:
 
 - [SQL Injection in Content Provider](https://hackerone.com/reports/291764)
-
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
 
 ---
 
@@ -250,13 +201,6 @@ You can also complete this task without decompiling the application. Pop an aler
 
 - [ownCloud WebView XSS](https://hackerone.com/reports/87835)
 
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
-
 ---
 
 ### 11. Smali Patching
@@ -266,13 +210,6 @@ In this task, you have to modify the execution flow of the application by editin
 ###### Resources & HackerOne Reports:
 
 - [Uber APK Signer](https://github.com/patrickfav/uber-apk-signer)
-
-<details>
-<summary>Show me how it's done!</summary>
-<br>
-# TODO
-<br><br>
-</details>
 
 ---
 
