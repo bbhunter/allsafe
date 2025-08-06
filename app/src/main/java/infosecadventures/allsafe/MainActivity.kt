@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 || super.onSupportNavigateUp())
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         val drawerLayout = mAppBarConfiguration?.openableLayout
         if (drawerLayout?.isOpen == true) {
@@ -68,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         } else if (supportFragmentManager.backStackEntryCount > 1) {
             supportFragmentManager.popBackStack()
         } else {
+            @Suppress("DEPRECATION")
             super.onBackPressed()
         }
     }
