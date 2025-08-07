@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" alt="Allsafe Logo" width="120"/>
+  <img src="screenshots/logo.png" alt="Allsafe Logo" width="120"/>
   
-  # Allsafe
+  # Allsafe - Android
   
   **An Intentionally Vulnerable Android Application for Security Education**
   
