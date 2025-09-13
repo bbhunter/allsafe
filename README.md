@@ -272,6 +272,12 @@ If you found this project helpful or valuable, please consider:
 - [Frida Documentation](https://frida.re/docs/home/)
 - [HackerOne Android Reports](https://hackerone.com/hacktivity?querystring=android)
 
+## 📝 Writeups
+
+- [Aybora Ünveren](https://ayboraa.github.io/Mobile%20Security/writeups/allsafe/)
+- [Soliman Almansor](https://medium.com/@soliman_almansor/all-safe-challenges-599a09cce447)
+- [Thirukrishnan](https://infosecwriteups.com/allsafe-intentionally-vulnerable-android-application-part-1-5603d75b78c9)
+
 ## ⚠️ Disclaimer
 
 This application is designed for **educational purposes only**. It should only be used in controlled environments where you have explicit permission. The developers assume no liability and are not responsible for any misuse or damage caused by this application.
