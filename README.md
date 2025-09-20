@@ -277,6 +277,7 @@ If you found this project helpful or valuable, please consider:
 - [Aybora Ünveren](https://ayboraa.github.io/Mobile%20Security/writeups/allsafe/)
 - [Soliman Almansor](https://medium.com/@soliman_almansor/all-safe-challenges-599a09cce447)
 - [Thirukrishnan](https://infosecwriteups.com/allsafe-intentionally-vulnerable-android-application-part-1-5603d75b78c9)
+- [Recep Emir Yardım](https://sahipkirann.github.io/Mobile%20Security/Allsafe%20Android%20App%20Writeup/)
 
 ## ⚠️ Disclaimer
 
